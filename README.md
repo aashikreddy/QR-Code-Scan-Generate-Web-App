@@ -20,8 +20,6 @@ This project is a web application that allows users to generate QR codes from an
 1. Clone the repository:
 git clone https://github.com/yourusername/qr-scan-generate.git
 cd qr-scan-generate
-
-text
 2. Open the `index.html` file in a modern web browser.
 3. Use the "Generator" button to create QR codes.
 4. Use the "Scanner" button to scan QR codes using your webcam.
