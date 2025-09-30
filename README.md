@@ -1,7 +1,7 @@
 # 📱 QR Code Scan & Generate Web App
 
 A simple and interactive **web application** that allows users to **generate** QR codes from any text or URL and **scan** QR codes using their device’s webcam in real time.  
-This project was built to practice **API calls, JavaScript, and modern web development techniques**.
+This project was built to practice **API calls, JavaScript, Node.js basics, and modern web development techniques**.
 
 ---
 
@@ -20,6 +20,37 @@ This project was built to practice **API calls, JavaScript, and modern web devel
 - **Frontend:** HTML5, CSS3, JavaScript (ES6)  
 - **Libraries:** [html5-qrcode](https://github.com/mebjas/html5-qrcode)  
 - **API:** [QRServer.com API](https://api.qrserver.com)  
+- **Node.js** (for scanner dependencies & local server setup)  
+
+---
+
+## 📂 Project Structure
+```
+QR_scan_generate/
+│
+├── .git/                     # Git version control folder
+│
+├── Generate/                 # QR code generator module
+│   ├── base.html              # QR generation HTML page
+│   ├── generate.js            # QR code generation JavaScript logic
+│   └── style.css              # CSS styles for generator module
+│
+├── Scan/                     # QR code scanner module
+│   ├── index.html             # Scanner main HTML page
+│   ├── result.html            # Page to display scan results
+│   ├── package.json           # Node dependencies manifest
+│   ├── package-lock.json      # Locked dependencies versions
+│   ├── style.css              # CSS styles for scanner
+│   └── node_modules/          # Installed node modules
+│
+├── index.html                 # Landing page (navigate to Generate/Scan)
+├── style.css                  # Common CSS styles for landing page
+├── README.md                  # Project documentation
+├── generate.js                # Optional: generator JS outside module
+├── result.html                # Optional: scan results page (if outside Scan/)
+├── image.jpg                  # Sample/placeholder image
+└── Other config/resources
+```
 
 ---
 
@@ -27,33 +58,29 @@ This project was built to practice **API calls, JavaScript, and modern web devel
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/qr-scan-generate.git
-cd qr-scan-generate
+git clone https://github.com/yourusername/QR_scan_generate.git
+cd QR_scan_generate
 ```
 
 ### 2. Run the project
-Simply open the `index.html` file in a modern browser.  
-⚠️ For webcam scanning, use a **local web server** instead of opening the file directly.
 
-#### Run a local server
-| Command                 | Description                           |
-|-------------------------|---------------------------------------|
-| `python -m http.server` | Run a simple HTTP server (Python 3)   |
-| `npx http-server`       | Run a simple HTTP server (Node.js)    |
+- **For QR Code Generator**  
+Open `/Generate/base.html` or `index.html` directly in your browser.
 
-After starting the server, visit:  
-👉 `http://localhost:8000` (or the specified port).
+- **For QR Code Scanner**  
+⚠️ Requires a local server for webcam access.  
 
----
+Run one of the following:
 
-## 📂 Project Structure
+```bash
+# Using Python
+python -m http.server
+
+# Using Node.js
+npx http-server
 ```
-qr-scan-generate/
-│── index.html       # Main entry point
-│── style.css        # Stylesheet
-│── script.js        # Core JS logic
-│── /assets          # Images, icons, QR downloads
-```
+
+Then visit 👉 `http://localhost:8000/Scan/index.html`  
 
 ---
 
@@ -71,4 +98,4 @@ This project is licensed under the **MIT License** – free to use and modify.
 
 ---
 
-### 🌟 Star this repo if you find it useful!  
+### 🌟 Star this repo if you find it useful!
