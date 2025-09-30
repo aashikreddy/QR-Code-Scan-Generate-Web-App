@@ -24,6 +24,16 @@ cd qr-scan-generate
 3. Use the "Generator" button to create QR codes.
 4. Use the "Scanner" button to scan QR codes using your webcam.
 
+## How to Run the Web Application
+For best compatibility, especially when accessing the webcam, consider running a local web server:
+
+| Command                 | Description                           |
+|-------------------------|-------------------------------------|
+| `python -m http.server` | Run a simple HTTP server (Python 3) |
+| `npx http-server`        | Run a simple HTTP server (Node.js)  |
+
+After starting the server, open your browser at `http://localhost:8000` (or the specified port).
+
 ## Contribution
 Feel free to fork, modify, and submit pull requests for improvements.
 
