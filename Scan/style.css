@@ -1,0 +1,145 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Main container */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    border-radius: 20px;
+    padding: 30px 25px;
+    animation: fadeIn 1s ease forwards;
+}
+
+/* QR Scanner box */
+#reader {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 5px solid #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    animation: zoomIn 0.8s ease forwards;
+}
+
+/* Result box */
+#result {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    margin-top: 15px;
+    color: #fff;
+    word-wrap: break-word;
+}
+
+#result a {
+    color: #00c6ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#result a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* Style the camera select dropdown */
+#reader select {
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    outline: none;
+    margin: 10px 0;
+    transition: background-color 0.3s, border 0.3s;
+}
+
+#reader select option {
+    background-color: #2a5298;
+    color: hsl(0, 0%, 100%);
+}
+
+/* Style the Stop Scanning button */
+#reader button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #00c6ff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+#reader button:hover {
+    background: #0096cc;
+}
+.back-btn {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+}
+
+

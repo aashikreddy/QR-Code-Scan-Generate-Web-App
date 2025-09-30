@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scan Result</title>
+    <style>
+        body {
+            background: #1e3c72;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .result-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            text-align: left;
+            word-wrap: break-word;
+            animation: fadeIn 0.8s ease;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #00c6ff;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0096cc;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="result-box">
+        <h2>Scan Result</h2>
+        <pre id="resultText"></pre>
+        <button onclick="copyResult()">Copy to Clipboard</button>
+        <button onclick="window.location.href='index.html'">Back to Scanner</button>
+    </div>
+
+    <script>
+        const result = localStorage.getItem("scanResult");
+
+        try {
+            const json = JSON.parse(result);
+            document.getElementById("resultText").textContent = JSON.stringify(json, null, 4);
+        } catch (e) {
+            document.getElementById("resultText").textContent = result;
+        }
+
+        function copyResult() {
+            const text = document.getElementById("resultText").innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Copied to clipboard!");
+            });
+        }
+    </script>
+
+</body>
+</html>
